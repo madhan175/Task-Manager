@@ -1,15 +1,7 @@
 import axios from 'axios';
 
-const getBaseURL = () => {
-  if (import.meta.env.VITE_API_URL) {
-    return import.meta.env.VITE_API_URL;
-  }
-  // In production, fallback to relative path; in development, default to local backend
-  return import.meta.env.PROD ? '/api/v1' : 'http://localhost:8000/api/v1';
-};
-
 const api = axios.create({
-  baseURL: getBaseURL(),
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1',
 });
 
 api.interceptors.request.use((config) => {
