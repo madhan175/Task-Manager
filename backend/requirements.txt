@@ -1,3 +1,4 @@
+```txt
 fastapi
 uvicorn[standard]
 sqlalchemy
@@ -8,6 +9,8 @@ bcrypt==4.0.1
 python-multipart
 python-dotenv
 pymysql
+psycopg2-binary
 email-validator
 pytest
 httpx
+```
