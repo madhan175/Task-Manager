@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL") or "sqlite:///./task_manager.db"
 
 # Create SQLAlchemy engine dynamically based on database protocol
 if DATABASE_URL.startswith("sqlite"):
